@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div id="music-player">
+        <input type="file" id="file-input" multiple accept="audio/*" onchange="loadFiles(event)">
+        <audio id="audio" controls></audio>
+        <div id="track-info">
+            <h2 id="track-name">Track Name</h2>
+            <h3 id="track-artist">Artist</h3>
+        </div>
+        <div id="controls">
+            <button id="prev" onclick="prevTrack()">Previous</button>
+            <button id="play-pause" onclick="togglePlay()">Play</button>
+            <button id="next" onclick="nextTrack()">Next</button>
+        </div>
+        <div id="volume-controls">
+            <button id="volume-down" onclick="decreaseVolume()">-</button>
+            <button id="volume-up" onclick="increaseVolume()">+</button>
+        </div>
+        <input type="range" id="progress-bar" value="0" onchange="setProgress(this.value)">
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
